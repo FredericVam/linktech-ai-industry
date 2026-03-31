@@ -30,7 +30,7 @@ export default async function handler(req, res) {
         humidity: current.relative_humidity_2m,
       },
       wind: {
-        speed: current.wind_speed_10m / 3.6,
+        speed: (current.wind_speed_10m / 3.6).toFixed(1),
         deg: current.wind_direction_10m,
       },
       dt: Math.floor(new Date(current.time).getTime() / 1000),
@@ -38,6 +38,6 @@ export default async function handler(req, res) {
       visibility: 10000,
     });
   } catch (error) {
-    res.status(500).json({ message: "Erreur météo" });
+    res.status(500).json({ message: "Erreur de météo" });
   }
 }

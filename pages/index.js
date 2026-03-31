@@ -36,8 +36,8 @@ export const App = () => {
         const data = await res.json();
         setWeatherData(data);
       } catch (error) {
-        setWeatherData({ message: "Erreur" });//c'est quoi
-      }//et triggerFetch c'est quoi
+        setWeatherData({ message: "Erreur" });
+      }
     };
 
     getData();
