@@ -29,9 +29,9 @@ Check the current weather on any city on the planet. Switch between metric and i
 
 3. `npm install`
 
-4. set NODE_OPTIONS=--openssl-legacy-provider
+4. **set NODE_OPTIONS=--openssl-legacy-provider
 
-5. npm run dev
+5. **npm run dev
 
 ## Contributions
 

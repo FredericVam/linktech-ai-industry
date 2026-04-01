@@ -13,7 +13,7 @@ export const MainCard = ({
   return (
     <div className={styles.wrapper}>
       <h1 className={styles.location}>
-        {country ? `${city}, ${country}` : city}
+        {city}
       </h1>
       <p className={styles.description}>{description}</p>
       <Image

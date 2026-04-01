@@ -1,3 +1,5 @@
+
+//on a enlevé import search
 import { useState, useEffect } from "react";
 import { MainCard } from "../components/MainCard";
 import { ContentBox } from "../components/ContentBox";
@@ -7,7 +9,6 @@ import { MetricsBox } from "../components/MetricsBox";
 import { UnitSwitch } from "../components/UnitSwitch";
 import { LoadingScreen } from "../components/LoadingScreen";
 import { ErrorScreen } from "../components/ErrorScreen";
-//on a enlevé import search
 
 import styles from "../styles/Home.module.css";
 
@@ -20,32 +21,30 @@ export const App = () => {
     const getData = async () => {
       //on a ajouté la configuration
       try {
-        const configResponse = await fetch("/config.json");
-        const config = await configResponse.json();
+        const configResponse = await fetch("/config.json");//
+        const config = await configResponse.json();//
        //intermediaire
         const res = await fetch("/api/data", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({//plus de cityInput
-            city: config.city,
-            latitude: config.latitude,
-            longitude: config.longitude,
+            city: config.city,//
+            latitude: config.latitude,//
+            longitude: config.longitude,//
           }),
         });
 
-        const data = await res.json();
-        setWeatherData(data);
+        const data = await res.json();//res.status(200).json(...) avait envoyé les données à index.js
+        setWeatherData(data);//et l’interface s’affiche
       } catch (error) {
         setWeatherData({ message: "Erreur" });
       }
     };
-
     getData();
 //on ajoute le raffraichissement
-    const interval = setInterval(getData, 3600000);
-
-    return () => clearInterval(interval);
-  }, []);
+    const interval = setInterval(getData, 3600000);//
+    return () => clearInterval(interval);//
+  }, []);//
 
   const changeSystem = () => {
     unitSystem === "metric"
@@ -66,13 +65,13 @@ export const App = () => {
       <ContentBox>
         <Header>
           <DateAndTime weatherData={weatherData} unitSystem={unitSystem} />
-        </Header>//on a enlevé la partiee search
+        </Header>
         <MetricsBox weatherData={weatherData} unitSystem={unitSystem} />
         <UnitSwitch onClick={changeSystem} unitSystem={unitSystem} />
       </ContentBox>
     </div>
   ) : weatherData && weatherData.message ? (//on enleve l'erreur liée à la ville non trouvée
-    <ErrorScreen errorMessage="Impossible de charger les données météo." />
+    <ErrorScreen errorMessage="Impossible de charger les données meteo." />//on change le message
   ) : (
     <LoadingScreen loadingMessage="Loading data..." />
   );
