@@ -28,14 +28,12 @@ Check the current weather on a city on the planet. Switch between metric and imp
 
 3. `npm install`
 
-4. **set NODE_OPTIONS=--openssl-legacy-provider
+4. 'set NODE_OPTIONS=--openssl-legacy-provider'
 
-5. **npm run dev
+5. 'npm run dev'
 
 ## Contributions
 
 Any feature requests and pull requests are welcome!
 
-## License
 
-The project is under [MIT license](https://choosealicense.com/licenses/mit/).
