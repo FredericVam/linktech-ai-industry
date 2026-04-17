@@ -1,39 +1,35 @@
-# Weather App
+# Application Météo
 
-Check the current weather on a city on the planet. Switch between metric and imperial units.
+Consultez la météo actuelle d'une ville du monde entier. Basculez entre les unités métriques et impériales.
 
+## Fonctionnalités
 
-## Features
+1. Recherche de villes (selon la base de données)
 
+2. Date et heure locales
 
-1. User's ability to search cities, it depends on the base
+3. Température et humidité
 
-2. Current local time and date
+4. Vitesse et direction du vent
 
-3. Temperatures and humidity
+5. Heures de lever et de coucher du soleil
 
-4. Wind speed and direction
+6. Système métrique ou impérial
 
-5. Sunrise and sunset times
-
-6. Metric vs Imperial system
-
-7. Error handling and loading info
+7. Gestion des erreurs et informations de chargement
 
 ## Installation
 
-1. project inspired from `git clone https://github.com/madzadev/weather-app.git`
+1. Projet inspiré de `git clone https://github.com/madzadev/weather-app.git`
 
 2. `cd weather-app`
 
 3. `npm install`
 
-4. 'set NODE_OPTIONS=--openssl-legacy-provider'
+4. `set NODE_OPTIONS=--openssl-legacy-provider`    //pour la version node originale
 
-5. 'npm run dev'
+5. `npm run dev`
 
 ## Contributions
 
-Any feature requests and pull requests are welcome!
-
-
+Toute suggestion de fonctionnalité ou contribution est la bienvenue !
